@@ -1,9 +1,21 @@
 #header .navbar-nav a {
-    /* color: blue; */
-    font-weight: bold;
+  /* color: blue; */
+  font-weight: bold;
 }
+.custom-backroud-color-contaner {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Change the alpha (last) value to adjust opacity */
 
-
+  color: white;
+}
+.custom-backroud-color-contaner h4,
+.custom-backroud-color-contaner h3 {
+  color: white; /* Set text color to white */
+}
 /* #header .navbar-nav a:hover {
     color: red;
 } */
