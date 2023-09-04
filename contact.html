@@ -167,6 +167,8 @@ Message: ${message}`;
                 .then(data => {
                     if (data.ok) {
                         showAlert('Message sent successfully.', 'success');
+                        location.reload();
+
                     } else {
                         showAlert('Failed to send message!.', 'error');
                     }

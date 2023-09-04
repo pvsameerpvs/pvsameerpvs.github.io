@@ -16,6 +16,14 @@
 .custom-backroud-color-contaner h3 {
   color: white; /* Set text color to white */
 }
+
+/* about */
+.rounded-image {
+  border-radius: 350px; /* You can adjust the value to control the roundness */
+  padding: 3px; /* Set the gap width */
+  border: 5px solid #000;
+}
+
 /* #header .navbar-nav a:hover {
     color: red;
 } */
