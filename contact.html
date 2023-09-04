@@ -166,15 +166,44 @@ Message: ${message}`;
                 .then(response => response.json())
                 .then(data => {
                     if (data.ok) {
-                        alert('Message sent successfully to Telegram.');
+                        showAlert('Message sent successfully.', 'success');
                     } else {
-                        alert('Failed to send message to Telegram.');
+                        showAlert('Failed to send message!.', 'error');
                     }
                 })
                 .catch(error => {
                     console.error('Error sending message to Telegram:', error);
-                    alert('Error sending message to Telegram. Please try again later.');
+                    showAlert('Error sending message to Telegram. Please try again later.', 'error');
                 });
+
+            function showAlert(message, type) {
+                const alertBox = document.createElement('div');
+                alertBox.textContent = message;
+                alertBox.style.padding = '10px';
+                alertBox.style.margin = '10px';
+                alertBox.style.borderRadius = '5px';
+                alertBox.style.position = 'fixed';
+                alertBox.style.left = '50%';
+                alertBox.style.bottom = '10px';
+                alertBox.style.transform = 'translateX(-50%)';
+                alertBox.style.fontWeight = 'bold';
+
+                if (type === 'success') {
+                    alertBox.style.backgroundColor = 'green';
+                    alertBox.style.color = 'white';
+                } else if (type === 'error') {
+                    alertBox.style.backgroundColor = 'red';
+                    alertBox.style.color = 'white';
+                }
+
+                document.body.appendChild(alertBox);
+
+                setTimeout(() => {
+                    document.body.removeChild(alertBox);
+                }, 5000);
+            }
+
+
 
         }
     </script>
