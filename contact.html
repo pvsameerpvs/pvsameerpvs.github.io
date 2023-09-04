@@ -140,7 +140,13 @@
             var subject = document.getElementById("subject").value;
             var message = document.getElementById("message").value;
 
-            console.log(message);
+            // Check if any of the form fields are empty and show a general error message
+            if (name === '' || email === '' || subject === '' || message === '') {
+                showAlert('Please fill out all fields before sending the message!.', 'error');
+                return; // Exit the function if any field is empty
+            }
+
+
 
             // Get your Telegram bot token from the hidden input field
             var botToken = "6695967674:AAE6uANHJuxQDx2j471t2ulkXx9GLweIS_k"
@@ -167,7 +173,9 @@ Message: ${message}`;
                 .then(data => {
                     if (data.ok) {
                         showAlert('Message sent successfully.', 'success');
-                        location.reload();
+                        setTimeout(() => {
+                            location.reload();
+                        }, 3000);
 
                     } else {
                         showAlert('Failed to send message!.', 'error');
@@ -190,10 +198,13 @@ Message: ${message}`;
                 alertBox.style.transform = 'translateX(-50%)';
                 alertBox.style.fontWeight = 'bold';
 
+
                 if (type === 'success') {
+
                     alertBox.style.backgroundColor = 'green';
                     alertBox.style.color = 'white';
                 } else if (type === 'error') {
+
                     alertBox.style.backgroundColor = 'red';
                     alertBox.style.color = 'white';
                 }
