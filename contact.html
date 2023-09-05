@@ -146,7 +146,12 @@
                 return; // Exit the function if any field is empty
             }
 
+            document.getElementById("send-button").disabled = true;
 
+
+            setTimeout(function() {
+                document.getElementById("send-button").disabled = false;
+            }, 2000);
 
             // Get your Telegram bot token from the hidden input field
             var botToken = "6695967674:AAE6uANHJuxQDx2j471t2ulkXx9GLweIS_k"
@@ -175,7 +180,7 @@ Message: ${message}`;
                         showAlert('Message sent successfully.', 'success');
                         setTimeout(() => {
                             location.reload();
-                        }, 3000);
+                        }, 2000);
 
                     } else {
                         showAlert('Failed to send message!.', 'error');
