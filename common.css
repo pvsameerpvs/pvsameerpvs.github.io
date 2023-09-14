@@ -27,3 +27,9 @@
 /* #header .navbar-nav a:hover {
     color: red;
 } */
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
